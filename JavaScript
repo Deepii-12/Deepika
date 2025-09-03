@@ -1,0 +1,17 @@
+// Typing effect for header subtitle
+const text = "Student | Learner | Future Rank Holder";
+let i = 0;
+
+function typingEffect() {
+  if (i < text.length) {
+    document.getElementById("subtitle").textContent += text.charAt(i);
+    i++;
+    setTimeout(typingEffect, 100);
+  }
+}
+
+// Start effect after page loads
+window.onload = () => {
+  document.getElementById("subtitle").textContent = "";
+  typingEffect();
+};
